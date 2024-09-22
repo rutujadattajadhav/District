@@ -68,12 +68,12 @@ public class DistrictServiceTest {
     public void getDistrict() throws Exception {
         List<DistrictModel> listdistrictModels=new ArrayList<>();
         DistrictModel districtModel= new DistrictModel();
-//        districtModel.setDistrictId(1);
-//        districtModel.setDistrictName("Ahmednagar");
-//        districtModel.setDistrictId(9);
-//        districtModel.setDistrictName("Dhule");
-//        listdistrictModels.add(districtModel);
-        Mockito.when(districtRepository.findAll()).thenReturn(listdistrictModels);
+        districtModel.setDistrictId(1);
+        districtModel.setDistrictName("Ahmednagar");
+        districtModel.setDistrictId(9);
+        districtModel.setDistrictName("Dhule");
+        listdistrictModels.add(districtModel);
+        Mockito.when(districtRepository.findAllById(Mockito.anyIterable())).thenReturn(listdistrictModels);
         List<Integer> integerList=new ArrayList<>();
         integerList.add(1);
         integerList.add(9);
