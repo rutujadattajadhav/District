@@ -5,11 +5,11 @@ spring:
       ddl-auto: validate
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/practice
-    username:  root
-    password:  root
+  r2dbc:
+    url: r2dbc:pool:mysql://localhost:3306/practice?zeroDateTimeBehavior=convertToNull&useSSL=false&useServerPrepareStatement=true
+    username: root
+    password: root
+
   application:
     name: DISTRICT
   config:
@@ -17,6 +17,8 @@ spring:
   webflux:
     base-path: /district
 server:
+  servlet:
+    context-path-state: /state/
   port: 8087
 
 management:
@@ -26,12 +28,4 @@ management:
   tracing:
     sampling:
       probability: 1.0
-logging:
-  level:
-    root: info
-    web: debug
-    reactor:
-      netty:
-        http:
-          client: DEBUG
 

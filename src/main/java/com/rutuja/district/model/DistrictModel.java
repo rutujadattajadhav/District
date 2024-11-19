@@ -1,17 +1,25 @@
 package com.rutuja.district.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Entity(name = "district")
+import lombok.Data;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table(name = "district")
 @Data
 public class DistrictModel {
     @Id
-    @Column(name="districtId")
+    @Column(value="districtId")
     private Integer districtId;
 
-    @Column(name="districtName")
+    @Column(value="districtName")
     private String districtName;
+
+    @Column(value="stateId")
+    private Integer stateId;
+
+    @Column(value="action")
+    private String action;
 }
