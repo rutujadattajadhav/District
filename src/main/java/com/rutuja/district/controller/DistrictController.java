@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
 import java.util.List;
-@CrossOrigin
+
 @RestController
 public class DistrictController {
     @Autowired
